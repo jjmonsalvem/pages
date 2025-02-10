@@ -3,17 +3,22 @@
 <html>
   <head>
     <title>Blog de Django</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=\
+      Source+Sans+Pro:400" rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
   <body>
-    <header>
-      <h1><a href="{% url 'home' %}">Blog de Django</a></h1>
-    </header>
     <div>
-      {% block content %}
+      <header>
+        <div class="nav-left">
+          <h1><a href="{% url 'home' %}">Blog de Django</a></h1>
+        </div>
+        <div class="nav-right">
+          <a href="{% url 'post_new' %}">+ Nueva Publicación de Blog</a>
+        </div>
+      </header>
+
+{% block content %}
       {% endblock content %}
     </div>
   </body>
